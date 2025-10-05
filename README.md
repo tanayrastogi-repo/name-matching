@@ -1,7 +1,9 @@
-# Python Name-Matching Exercise
+# Name-Matching Exercise
 
 ## Overview
-This is a data analysis exercise designed to test your ability to match records across datasets based on name matching. You will work with congressional data to identify and link politicians across different datasets.
+Data analysis exercise designed to test the ability to match records across datasets based on name matching. In the exercise, we will work with congressional data to identify and link politicians across different datasets.
+
+Link to the interactive nodebook: 
 
 ## Datasets
 You will be working with two types of datasets:
@@ -18,38 +20,23 @@ You will be working with two types of datasets:
 ## Task Objective
 Your goal is to **match as many people from the congress members dataset as possible** with records in the election datasets using **name-based matching only**. Use exact and fuzzy matching as you deem fit.
 
-### Technical Specifications
-- Implement your solution in Python
-- Handle name variations and potential inconsistencies
-- Consider different name formats (e.g., "John Smith" vs "Smith, John")
-- Account for nicknames, middle names, and common name variations
-- Document your matching strategy and assumptions
+### Technical Specifications of my Impelementaion
+- Sophisticated REGEX that can handle name variations and potential inconsistencies. It consider different name formats (e.g., "John Smith" vs "Smith, John") and account for nicknames, middle names, and common name variations
+- The name matching is done based on the Double Metaphone method. 
 
 ## Deliverables
 
-1. **Python Script(s)**: Your name-matching implementation. Preferably a single .py script or a jupyter notebook.
-2. **Results File**: A CSV or similar file showing:
+1. **Jupyter Notebook**: Single notebook with all the code. The notebook is developed in Marimo and is named as "name-matching.py"
+2. **Results File**: RESULT.csv file showing
    - Matched records
-   - Confidence scores (if applicable)
    - Unmatched records from the primary dataset
-3. **Minimal in-code documentation**: 
-   - Explanation of your matching algorithm
-   - Assumptions made
-   - Challenges encountered and how you addressed them
-   - In-code comments/markdown cells are perfectly fine, don't submit a separate document.
+3. **Interactive notebook**
 
-## Evaluation Criteria
+## Disclaimer
 
-- **Coverage**: How many congress members you successfully matched
-- **Accuracy**: Quality of the matches (avoiding false positives)
-- **Code Quality**: Clean, well-documented, and efficient code
-- **Documentation**: Clear explanation of your approach and methodology
+I have used ChatGPT LLM model, for generation of code, specifically the REGEX. Also, there are some parts of the code that are refined (or added docstring) using the LLM model. However, the original idea as well as the implementation is all done my me. I take the full responsiblity of the code. 
 
-## Getting Started
 
-1. Clone this repository or - if you prefer - create a private fork.
-2. Explore the data structure and identify potential matching challenges
-3. Develop and test your matching algorithm
-4. Generate results and document your findings
+**Reference:**
 
-Submit your solutions via email (a single python file and a csv file with your results).
+ * [Fuzzy name matching techniques](https://www.babelstreet.com/blog/fuzzy-name-matching-techniques)
