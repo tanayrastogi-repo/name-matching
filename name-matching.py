@@ -223,6 +223,12 @@ def _(matched_df, splitter):
     return (refined_matched_df,)
 
 
+@app.cell
+def _(df):
+    df
+    return
+
+
 @app.cell(hide_code=True)
 def _(df, n_dropped_names_ele, n_dropped_ref_names, refined_matched_df):
     mo.md(

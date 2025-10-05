@@ -3,7 +3,7 @@
 ## Overview
 Data analysis exercise designed to test the ability to match records across datasets based on name matching. In the exercise, we will work with congressional data to identify and link politicians across different datasets.
 
-Link to the interactive nodebook: 
+Link to the interactive nodebook: https://static.marimo.app/static/namematching-9kpt
 
 ## Datasets
 You will be working with two types of datasets:
@@ -30,7 +30,7 @@ Your goal is to **match as many people from the congress members dataset as poss
 2. **Results File**: RESULT.csv file showing
    - Matched records
    - Unmatched records from the primary dataset
-3. **Interactive notebook**
+3. **Interactive notebook** -  from the link.
 
 ## Disclaimer
 
