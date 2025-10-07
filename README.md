@@ -1,36 +1,44 @@
 # Name-Matching Exercise
 
-## Overview
-Data analysis exercise designed to test the ability to match records across datasets based on name matching. In the exercise, we will work with congressional data to identify and link politicians across different datasets.
-
 Link to the interactive nodebook: https://static.marimo.app/static/namematching-9kpt
 
-## Datasets
-You will be working with two types of datasets:
+## Overview
+**Goal:** 
 
-1. **Primary Dataset**: `congress_members_with_parties.csv`
-   - Contains information about congress members and their party affiliations
-   - This is your reference dataset
+Match records across datasets using name matching only, focusing on U.S. congressional data. The task is to link people in a “congress members + party” reference file to yearly “congressional elections” files from 1992–2025. 
 
-2. **Election Datasets**: `congressional_elections_YYYY.csv` (where YYYY ranges from 1992 to 2025)
-   - Contains congressional election data for each year
-   - Multiple files covering elections from 1992 through 2025
-   - **Important**: The `status` column in these datasets is unreliable and should be ignored
+**Approach (as stated):**
 
-## Task Objective
-Your goal is to **match as many people from the congress members dataset as possible** with records in the election datasets using **name-based matching only**. Use exact and fuzzy matching as you deem fit.
+ - Uses Double Metaphone phonetic encoding for matching.
+ - Regex normalization (e.g., splitting “Last, First Middle”, removing punctuation/honorifics, handling middle initials, suffixes like Jr./III).
 
-### Technical Specifications of my Impelementaion
-- Sophisticated REGEX that can handle name variations and potential inconsistencies. It consider different name formats (e.g., "John Smith" vs "Smith, John") and account for nicknames, middle names, and common name variations
-- The name matching is done based on the Double Metaphone method. 
 
-## Deliverables
+# Repo structure
+From the repo root:
 
-1. **Jupyter Notebook**: Single notebook with all the code. The notebook is developed in Marimo and is named as "name-matching.py"
-2. **Results File**: RESULT.csv file showing
-   - Matched records
-   - Unmatched records from the primary dataset
-3. **Interactive notebook** -  from the link.
+* `name-matching.py` – Marimo notebook (script form).
+* `name-matching.ipynb` – Jupyter notebook version.
+* `data/` – contains `congress_members_with_parties.csv` + `congressional_elections_YYYY.csv` (1992–2025).
+* `results.csv` – example output.
+* `pyproject.toml` + `uv.lock` – project dependencies & lockfile (looks like it uses **uv** for Python packaging).
+
+
+# How To Run
+
+Because the repo includes `pyproject.toml` and a `uv.lock`, the intended workflow is ssing uv: 
+
+1. Install uv (if needed) and ensure your Python matches `.python-version`.
+2. From the repo root: `uv sync`
+3. Run the notebook script: `uv run python name-matching.py` (Marimo) or open `name-matching.ipynb` in Jupyter/VS Code.
+
+
+# Tech Stack
+
+   * Python.
+   * Pandas for reading csv data.
+   * Re python package for REGEX.
+   * Metaphone library for Doube Metaphone. 
+   * Marimo notebook
 
 ## Disclaimer
 
